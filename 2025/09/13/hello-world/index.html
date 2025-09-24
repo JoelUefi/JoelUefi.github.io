@@ -200,6 +200,18 @@
     <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
     <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
     <!-- algolia -->
+        <script>
+            var hits = JSON.parse('{"per_page":20}')
+            var labels = JSON.parse('{"input_placeholder":"Search for Posts","hits_empty":"We did not find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}')
+
+            var algolia = {
+                applicationID: '8HOEREL2RX',
+                apiKey: '294ed955f77d04d3a830890ab4af5974',
+                indexName: 'hexo_posts',
+                hits: hits,
+                labels: labels
+            }
+        </script>
     <!-- 百度统计  -->
     <!-- 谷歌统计  -->
     <!-- Google tag (gtag.js) -->
@@ -500,17 +512,24 @@
     <!-- social  -->
         <div class="social">
                             <a href="mailto:12345@qq.com" class="iconfont-archer email" title="email" ></a>
-                <a href="//github.com/zhouj" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//github.com/joeluefi" class="iconfont-archer github" target="_blank" title="github"></a>
                 <span class="iconfont-archer wechat" title="wechat">
                     <img class="profile-qr" src="/assets/example_qr.png" />
                 </span>
 
         </div>
     <!-- powered by Hexo  -->
-    <div class="copyright">
-        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/zhouj/hexo-theme-archer" target="_blank">Archer</a></span>
-    </div>
+
     <!-- website approve for Chinese user -->
+        <div class="website-approve">
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备12345678号</a>
+                </span>
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030002012345" target="_blank">京公网安备 44030002012345号</a>
+                </span>
+        </div>
     <!-- 不蒜子  -->
         <div class="busuanzi-container">
                 <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
@@ -543,20 +562,23 @@
         Total : 2
         </div>
         <!-- search  -->
+            <div class="site-search site-search-loading popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
     </div>
     <div class="post-archive">
-            <div class="archive-year"> 2025 </div>
-            <ul class="year-list">
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/15</span>
-            <a class="archive-post-title" href="/2025/09/15/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/">文章测试</a>
-        </li>
-                </ul>
             <div class="archive-year"> Invalid date </div>
             <ul class="year-list">
         <li class="archive-post-item">
             <span class="archive-post-date">Invalid date</span>
             <a class="archive-post-title" href="/2025/09/13/hello-world/">Hello World</a>
+        </li>
+                </ul>
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/15</span>
+            <a class="archive-post-title" href="/2025/09/15/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/">文章测试</a>
         </li>
             </ul>
     </div>
@@ -603,6 +625,27 @@
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
+            <div class="site-search site-search-loading">
+    <div class="algolia-popup popup">
+        <div class="algolia-search">
+            <div class="algolia-search-input-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <div class="algolia-search-input" id="algolia-search-input"></div>
+            <div class="popup-btn-close">
+                <i class="iconfont-archer">&#xe609;</i>
+            </div>
+        </div>
+
+        <div class="algolia-results">
+            <div id="algolia-stats" class="algolia-stats"></div>
+            <div id="algolia-hits"></div>
+            <div id="algolia-pagination" class="algolia-pagination"></div>
+        </div>
+    </div>
+</div>
+
+            <script src="/scripts/search.js" async></script>
         <!-- busuanzi -->
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
         <!-- async load share.js -->
