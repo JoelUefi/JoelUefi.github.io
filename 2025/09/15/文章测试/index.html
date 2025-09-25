@@ -488,7 +488,20 @@
 
             
             
-            
+                <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
+    <div id="comment"></div>
+    <script>
+    Waline.init({
+        el: '#comment' ,
+        serverURL: "https://example.uefilog.top",
+        locale: {
+            placeholder: "说点什么吧…"
+        },
+        login: "enable"
+    });
+    </script>
+
         </div>
     <!-- timeliness note -->
     <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
@@ -569,11 +582,11 @@
             <ul class="year-list">
         <li class="archive-post-item">
             <span class="archive-post-date">09/24</span>
-            <a class="archive-post-title" href="/2025/09/24/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95-2/">文章测试</a>
+            <a class="archive-post-title" href="/2025/09/24/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95-1/">文章测试-1 写作 Demo（代码 / 表格 / 语法合集）</a>
         </li>
         <li class="archive-post-item">
             <span class="archive-post-date">09/24</span>
-            <a class="archive-post-title" href="/2025/09/24/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95-1/">文章测试-1 写作 Demo（代码 / 表格 / 语法合集）</a>
+            <a class="archive-post-title" href="/2025/09/24/%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95-2/">文章测试</a>
         </li>
         <li class="archive-post-item">
             <span class="archive-post-date">09/15</span>
